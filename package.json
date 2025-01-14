@@ -4,6 +4,7 @@
   "description": "",
   "main": "SRC/index.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/AugustoMoratti/GestorDeProyectos/issues"
   },
-  "homepage": "https://github.com/AugustoMoratti/GestorDeProyectos#readme"
+  "homepage": "https://github.com/AugustoMoratti/GestorDeProyectos#readme",
+  "dependencies": {
+    "electron-reload": "^2.0.0-alpha.1"
+  }
 }
