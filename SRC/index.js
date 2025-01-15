@@ -1,5 +1,7 @@
 const { app, BrowserWindow, Menu } = require('electron');
 
+require('database.js'); //Aqui esta la coneccion a la base de datos
+
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 800,
@@ -12,11 +14,7 @@ const createWindow = () => {
 };
 
 //AUTO REFRESH EN DESARROLLO 
-if (process.env.NODE_ENV === 'development') {
-  require('electron-reload')(__dirname, {
-    electron: Path2D.join(__dirname, '../node_modules', '.bin', 'electron')
-  });
-};
+require('electron-reload')(__dirname);
 
 //Para crear la ventana de la app
 app.on('ready', () => {
@@ -50,4 +48,12 @@ const templateMenu = [
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit()
 });
+
+
+//En este js crearemos funciones para que interactuen con la base de datos, 
+// pero debemos exportarla a algun otro JS , que seria el del frontend
+//y de ahi llamaremos a las funciones.
+module.exports = {
+
+}
 
